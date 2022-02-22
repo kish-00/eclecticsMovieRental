@@ -2,25 +2,26 @@ package com.movies.app.Controller.model;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
 
 
-@RestController
+@Entity
+@Table(name = "Inventory")
 public class Inventory {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id")
     private int inventoryID;
-    private int filmID;
+
+    @Column(name = "lastUpdated")
     private Timestamp lastUpdated;
-    private List<Rental> rentals;
 
 
-    public List<Rental> getRentals() {
-        return rentals;
-    }
-
-    public void setRentals(List<Rental> rentals) {
-        this.rentals = rentals;
-    }
+    @ManyToOne
+    private Film filmInventory;
 
     public int getInventoryID() {
         return inventoryID;
@@ -28,14 +29,6 @@ public class Inventory {
 
     public void setInventoryID(int inventoryID) {
         this.inventoryID = inventoryID;
-    }
-
-    public int getFilmID() {
-        return filmID;
-    }
-
-    public void setFilmID(int filmID) {
-        this.filmID = filmID;
     }
 
     public Timestamp getLastUpdated() {

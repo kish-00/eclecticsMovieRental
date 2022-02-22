@@ -2,15 +2,28 @@ package com.movies.app.Controller.model;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
-@RestController
+@Entity
+@Table(name = "Category")
 public class Category {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id1")
     private int categoryID;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name="last_Update")
     private Timestamp last_Update;
-    private List<FilmCategory> filmCategories;
+
+    @ManyToMany(mappedBy = "categories")
+    private List<Film> films;
 
     public int getCategoryID() {
         return categoryID;
@@ -36,11 +49,11 @@ public class Category {
         this.last_Update = last_Update;
     }
 
-    public List<FilmCategory> getFilmCategories() {
-        return filmCategories;
+    public List<Film> getFilms() {
+        return films;
     }
 
-    public void setFilmCategories(List<FilmCategory> filmCategories) {
-        this.filmCategories = filmCategories;
+    public void setFilms(List<Film> filmCategories) {
+        this.films = filmCategories;
     }
 }

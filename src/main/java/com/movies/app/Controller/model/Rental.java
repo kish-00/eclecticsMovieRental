@@ -2,30 +2,39 @@ package com.movies.app.Controller.model;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
 
-@RestController
+@Entity
+@Table(name = "Rental")
 public class Rental {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="Id")
     private int rentalID;
-    private int staffID;
-    private int customerID;
-    private int inventoryID;
+
+    @Column(name = "rentalDate")
     private Date rentalDate;
+
+    @Column(name = "returnDate")
     private Date returnDate;
+
+    @Column(name = "lastUpdate")
     private Timestamp lastUpdate;
-    private List<Payment> payments;
 
 
-    public List<Payment> getPayments() {
-        return payments;
-    }
 
-    public void setPayments(List<Payment> payments) {
-        this.payments = payments;
-    }
+    @ManyToOne
+    private Staff staff1;
+
+    @ManyToOne
+    private Customer customer1;
+
+
 
     public int getRentalID() {
         return rentalID;
@@ -33,30 +42,6 @@ public class Rental {
 
     public void setRentalID(int rentalID) {
         this.rentalID = rentalID;
-    }
-
-    public int getStaffID() {
-        return staffID;
-    }
-
-    public void setStaffID(int staffID) {
-        this.staffID = staffID;
-    }
-
-    public int getCustomerID() {
-        return customerID;
-    }
-
-    public void setCustomerID(int customerID) {
-        this.customerID = customerID;
-    }
-
-    public int getInventoryID() {
-        return inventoryID;
-    }
-
-    public void setInventoryID(int inventoryID) {
-        this.inventoryID = inventoryID;
     }
 
     public Date getRentalDate() {

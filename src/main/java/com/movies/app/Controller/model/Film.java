@@ -2,32 +2,87 @@ package com.movies.app.Controller.model;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
 
-@RestController
-public class Film {
-    private int filmID;
-    private int languageID;
-    private String title;
-    private String description;
-    private Date releaseYear;
-    private byte rentalDuration;
-    private BigDecimal rentalRate;
-    private int length;
-    private BigDecimal replacementCost;
-    private String rating;
-    private Timestamp last_update;
-    private String specialFeatures;
-    private String fulltext;
-    private List<Inventory> inventories;
-    private List<Language> filmLanguages;
-    private List<FilmActor> filmActors;
-    private List<FilmCategory> filmCategories;
+@Entity
+@Table(name = "Film")
 
+public class Film {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id")
+    private int filmID;
+
+    @Column(name = "title")
+    private String title;
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "releaseYear")
+    private Date releaseYear;
+
+    @Column(name = "rentalDuration")
+    private byte rentalDuration;
+
+    @Column(name = "rentalRate")
+    private BigDecimal rentalRate;
+
+    @Column(name = "length")
+    private int length;
+
+    @Column(name = "replacementCost")
+    private BigDecimal replacementCost;
+
+    @Column(name = "rating")
+    private String rating;
+
+    @Column(name = "lastUpdate")
+    private Timestamp last_update;
+
+    @Column(name = "specialFeatures")
+    private String specialFeatures;
+
+    @Column(name = "fullText")
+    private String fulltext;
+
+    @OneToMany(mappedBy = "filmInventory")
+    private List<Inventory> inventories;
+
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "film_actor",joinColumns = {@JoinColumn(referencedColumnName = "Id")},inverseJoinColumns = {@JoinColumn(referencedColumnName = "Id")})
+    private List<Actor> actors;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "film_category",joinColumns = {@JoinColumn(referencedColumnName = "Id")},inverseJoinColumns = {@JoinColumn(referencedColumnName = "Id1", insertable = false, updatable = false)})
+    private List<Category> categories;
+
+    @ManyToOne
+    private  Language language1;
+
+
+    public List<Actor> getActors() {
+        return actors;
+    }
+
+    public void setActors(List<Actor> actors) {
+        this.actors = actors;
+    }
+
+    public List<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
+    }
 
     public int getFilmID() {
         return filmID;
@@ -35,14 +90,6 @@ public class Film {
 
     public void setFilmID(int filmID) {
         this.filmID = filmID;
-    }
-
-    public int getLanguageID() {
-        return languageID;
-    }
-
-    public void setLanguageID(int languageID) {
-        this.languageID = languageID;
     }
 
     public String getTitle() {
@@ -133,21 +180,6 @@ public class Film {
         this.fulltext = fulltext;
     }
 
-    public List<FilmActor> getFilmActors() {
-        return filmActors;
-    }
-
-    public void setFilmActors(List<FilmActor> filmActors) {
-        this.filmActors = filmActors;
-    }
-
-    public List<FilmCategory> getFilmCategories() {
-        return filmCategories;
-    }
-
-    public void setFilmCategories(List<FilmCategory> filmCategories) {
-        this.filmCategories = filmCategories;
-    }
 
     public List<Inventory> getInventories() {
         return inventories;
@@ -157,11 +189,4 @@ public class Film {
         this.inventories = inventories;
     }
 
-    public List<Language> getFilmLanguages() {
-        return filmLanguages;
-    }
-
-    public void setFilmLanguages(List<Language> filmLanguages) {
-        this.filmLanguages = filmLanguages;
-    }
 }

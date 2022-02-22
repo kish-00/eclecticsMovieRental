@@ -1,18 +1,36 @@
 package com.movies.app.Controller.model;
 
+import jdk.nashorn.internal.objects.annotations.Getter;
+import jdk.nashorn.internal.objects.annotations.Setter;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
-@RestController
-public class Actor {
-    private int actorID;
-    private String firstName;
-    private String lastName;
-    private Timestamp timestamp;
-    private List<FilmActor> filmActors;
 
+
+@Entity
+@Table(name = "Actor")
+public class Actor {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id")
+    private int actorID;
+
+    @Column(name = "firstName")
+    private String firstName;
+
+    @Column(name = "lastName")
+    private String lastName;
+
+    @Column(name = "timestamp")
+    private Timestamp timestamp;
+
+    @ManyToMany(mappedBy = "actors")
+    private List<Film> films;
 
     public int getActorID() {
         return actorID;
@@ -22,6 +40,13 @@ public class Actor {
         this.actorID = actorID;
     }
 
+    public List<Film> getFilms() {
+        return films;
+    }
+
+    public void setFilms(List<Film> films) {
+        this.films = films;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -47,11 +72,4 @@ public class Actor {
         this.timestamp = timestamp;
     }
 
-    public List<FilmActor> getFilmActors() {
-        return filmActors;
-    }
-
-    public void setFilmActors(List<FilmActor> filmActors) {
-        this.filmActors = filmActors;
-    }
 }

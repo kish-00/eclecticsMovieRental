@@ -2,16 +2,30 @@ package com.movies.app.Controller.model;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
 
 
-@RestController
+@Entity
+@Table(name = "Store")
 public class Store {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id")
     private  int storeID;
-    private int addresID;
+
+    @Column(name = "lastUpdated")
     private Timestamp lastUpdated;
+
+
+    @OneToMany(mappedBy = "store1")
     private List<Staff> staff;
+
+    @ManyToOne
+    Address address1;
+
 
     public List<Staff> getStaff() {
         return staff;
@@ -29,13 +43,6 @@ public class Store {
         this.storeID = storeID;
     }
 
-    public int getAddresID() {
-        return addresID;
-    }
-
-    public void setAddresID(int addresID) {
-        this.addresID = addresID;
-    }
 
     public Timestamp getLastUpdated() {
         return lastUpdated;

@@ -2,16 +2,31 @@ package com.movies.app.Controller.model;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
-@RestController
+@Entity
+@Table(name = "City")
 public class City {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id")
     private int cityID;
-    private int countryID;
+
+    @Column(name = "city")
     private String city;
+
+    @Column(name = "lastUpdate")
     private Timestamp lastUpdate;
-    private List<Address> addresses;
+
+    @OneToMany(mappedBy = "city1")
+    private List<Address> addresses = new ArrayList<Address>();
+
+    @ManyToOne
+    private Country country1;
 
     public int getCityID() {
         return cityID;
@@ -21,13 +36,6 @@ public class City {
         this.cityID = cityID;
     }
 
-    public int getCountryID() {
-        return countryID;
-    }
-
-    public void setCountryID(int countryID) {
-        this.countryID = countryID;
-    }
 
     public String getCity() {
         return city;
@@ -44,6 +52,7 @@ public class City {
     public void setLastUpdate(Timestamp lastUpdate) {
         this.lastUpdate = lastUpdate;
     }
+
 
     public List<Address> getAddresses() {
         return addresses;

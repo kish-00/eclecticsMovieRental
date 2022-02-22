@@ -2,22 +2,50 @@ package com.movies.app.Controller.model;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
-@RestController
+@Entity
+@Table(name = "Address")
 public class Address {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id")
     private int addressID;
-    private int cityID;
+
+    @Column(name = "address")
     private String address;
+
+    @Column(name = "address2")
     private String address2;
+
+    @Column(name = "district")
     private int district;
+
+    @Column(name = "postal_code")
     private String postal_code;
+
+    @Column(name = "phone")
     private String phone;
+
+    @Column(name = "last_update")
     private Timestamp last_Update;
-    private List<Customer> customers;
-    private List<Staff> staffs;
-    private List<Store> stores;
+
+    @ManyToOne
+    private City city1;
+
+
+    @OneToMany(mappedBy = "address1")
+    private List<Customer> customers = new ArrayList<Customer>();
+
+    @OneToMany(mappedBy = "address1")
+    private List<Staff> staffs = new ArrayList<Staff>();
+
+    @OneToMany(mappedBy = "address1")
+    private List<Store> stores = new ArrayList<Store>();
 
     public int getAddressID() {
         return addressID;
@@ -25,14 +53,6 @@ public class Address {
 
     public void setAddressID(int addressID) {
         this.addressID = addressID;
-    }
-
-    public int getCityID() {
-        return cityID;
-    }
-
-    public void setCityID(int cityID) {
-        this.cityID = cityID;
     }
 
     public String getAddress() {
@@ -83,6 +103,7 @@ public class Address {
         this.last_Update = last_Update;
     }
 
+
     public List<Customer> getCustomers() {
         return customers;
     }
@@ -91,6 +112,7 @@ public class Address {
         this.customers = customers;
     }
 
+
     public List<Staff> getStaffs() {
         return staffs;
     }
@@ -98,6 +120,7 @@ public class Address {
     public void setStaffs(List<Staff> staffs) {
         this.staffs = staffs;
     }
+
 
     public List<Store> getStores() {
         return stores;

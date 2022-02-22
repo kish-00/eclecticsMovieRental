@@ -2,18 +2,35 @@ package com.movies.app.Controller.model;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
 
-@RestController
+@Entity
+@Table(name = "Payment")
 public class Payment {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id")
     private int paymentID;
-    private int rentalID;
-    private int customerID;
-    private int staffID;
+
+    @Column(name = "amount")
     private BigDecimal amount;
+
+    @Column(name = "paymentDate")
     private Date paymentDate;
+
+
+    @ManyToOne
+    private Rental rental1;
+
+    @ManyToOne
+    private Customer customer1;
+
+    @ManyToOne
+    private Staff staff1;
 
 
     public int getPaymentID() {
@@ -22,30 +39,6 @@ public class Payment {
 
     public void setPaymentID(int paymentID) {
         this.paymentID = paymentID;
-    }
-
-    public int getRentalID() {
-        return rentalID;
-    }
-
-    public void setRentalID(int rentalID) {
-        this.rentalID = rentalID;
-    }
-
-    public int getCustomerID() {
-        return customerID;
-    }
-
-    public void setCustomerID(int customerID) {
-        this.customerID = customerID;
-    }
-
-    public int getStaffID() {
-        return staffID;
-    }
-
-    public void setStaffID(int staffID) {
-        this.staffID = staffID;
     }
 
     public BigDecimal getAmount() {
