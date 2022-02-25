@@ -43,7 +43,7 @@ CREATE TABLE `payment` (
 `rental_Id` int(10) NOT NULL,
 `customer_Id` int(10) NOT NULL,
 `staff_id` int(10) NOT NULL,
-`amount` numeric(19,0) NOT NULL,
+`amount` numeric(19,2) NOT NULL,
 `paymentDate` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

@@ -12,13 +12,11 @@ import java.util.Scanner;
 public class MainApp {
     static int selectedOption;
     static Scanner sc = new Scanner(System.in);
-    static int tOption;
 
     public static void main(String[] args) {
         System.out.println("*** MOVIE RENTAL SYSTEM ***");
 
         Account account = new Account();
-//        if (!account.isloggedin()){}
         Staff staff = account.login();
         if (staff.getUserName() == null) {
             System.out.println("No staff with provided username is found");
@@ -26,7 +24,7 @@ public class MainApp {
             System.out.println("Staff account is inactive");
         }
         System.out.println(" ");
-        System.out.println("The user "+staff.getUserName()+" is authenticated!!!");
+        System.out.println("Welcome "+staff.getUserName());
         System.out.println(" ");
         displayMainMenu();
 
@@ -39,7 +37,7 @@ public class MainApp {
                     } else if (!customer.isActive()) {
                         throw new IllegalStateException("Customer account "+customer.getFirstName()+" "+customer.getLastName()+ " is inactive!");
                     } else
-                        System.out.println("Would you like to reactivate it?? [1 for yes/2 for no]");
+                        System.out.println("Would you like to reactivate it? [1 for yes or 2 for no]");
                     int reactivateOption = sc.nextInt();
                     if (reactivateOption == 1){
                         account.reactivateCustomer();
@@ -86,8 +84,6 @@ public class MainApp {
                 System.out.println("The film to be rented is: "+filmRental.getTitle());
                 System.out.println("The total amount is: "+filmRental.FilmPayment());
                 break;
-//                case 7:
-//                    break;
             default:
                 System.out.println("Transaction has ended");
                 System.out.println("Thank you for using Visual Movie Rental System");
@@ -105,7 +101,6 @@ public class MainApp {
         System.out.println("Press 5 to view payment details");
         System.out.println("Press 6 to rent a film");
         System.out.println(" ");
-//        System.out.println("Press 7 to logout");
         selectedOption = sc.nextInt();
     }
 

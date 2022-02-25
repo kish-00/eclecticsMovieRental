@@ -12,9 +12,6 @@ public class Account{
     static Scanner sc = new Scanner(System.in);
 
     public Staff login() {
-//        if (isloggedin()) {
-//            System.out.println(Staff.getUserName()+" is currently logged in.");
-//        }
         System.out.println("Please enter your username and password to login.");
         System.out.println("Enter your username");
         String userName = sc.next();
