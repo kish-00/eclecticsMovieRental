@@ -19,27 +19,27 @@ public class ActorController {
     @Autowired
     private ActorRepo actorRepo;
 
-    // get all countries
+    // get all actors
     @GetMapping(value = "/actors")
     public List<Actor> getAllActors(){
         return actorRepo.findAll();
     }
-    //create Employee Rest API
+    //create actor Rest API
     @PostMapping("/actors")
     public Actor createActor(@RequestBody Actor actor){
         return actorRepo.save(actor);
     }
-    //get countries by id
+    //get actors by id
     @GetMapping(value = "/actors/{id}")
     public ResponseEntity<Actor> getActorById(@PathVariable int id){
-        Actor actor=actorRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("Actor not exist with id:" + id));
+        Actor actor=actorRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("No Actor exist with id:" + id));
         return ResponseEntity.ok(actor);
     }
 
-    // update country Rest API
+    // update actors Rest API
     @PutMapping(value = "/actors/{id}")
     public ResponseEntity<Actor> updateActor(@PathVariable int id,@RequestBody Actor actorDetails){
-        Actor actor=actorRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("Actor not exist with id:" + id));
+        Actor actor=actorRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("No Actor exist with id:" + id));
 
         actorDetails.setFirstName(actor.getFirstName());
         actor.setLastName(actor.getLastName());
@@ -49,7 +49,7 @@ public class ActorController {
         return ResponseEntity.ok(actor);
     }
 
-    // delete country from rest API
+    // delete actor from rest API
     @DeleteMapping(value = "/actors/{id}")
     public  ResponseEntity<HttpStatus> deleteActor(@PathVariable int id){
         Actor actor=actorRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("Actor not exist with id:" + id));
