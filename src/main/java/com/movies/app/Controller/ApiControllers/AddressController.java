@@ -23,12 +23,12 @@ public class AddressController {
     private AddressRepo addressRepo;
 
 
-    // get all countries
+    // get all addresses
     @GetMapping(value = "/address")
     public List<Address> getAllActors(){
         return addressRepo.findAll();
     }
-    //create Employee Rest API
+    //create address Rest API
     @PostMapping("/address")
     public Address createAddress(@RequestBody Address address){
         return addressRepo.save(address);
@@ -41,7 +41,7 @@ public class AddressController {
         return ResponseEntity.ok(address);
     }
 
-    // update country Rest API
+    // update address Rest API
     @PutMapping(value = "/address/{id}")
     public ResponseEntity<Address> updateActor(@PathVariable int id,@RequestBody Address addressDetails){
         Address address=addressRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("Address not exist with id:" + id));
@@ -57,7 +57,7 @@ public class AddressController {
         return ResponseEntity.ok(address);
     }
 
-    // delete country from rest API
+    // delete address from rest API
     @DeleteMapping(value = "/address/{id}")
     public  ResponseEntity<HttpStatus> deleteActor(@PathVariable int id){
         Address address=addressRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("Address not exist with id:" + id));
