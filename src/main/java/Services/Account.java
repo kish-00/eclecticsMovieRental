@@ -11,6 +11,7 @@ import static Connection.ConnectionDb.connect;
 public class Account{
     static Scanner sc = new Scanner(System.in);
 
+    //staff login
     public Staff login() {
         System.out.println("Please enter your username and password to login.");
         System.out.println("Enter your username");
@@ -20,7 +21,7 @@ public class Account{
 
         try {
             Connection conn = connect();
-            PreparedStatement ps = conn.prepareStatement("SELECT * FROM staff WHERE userName=? AND password=?");
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM staff WHERE userName=? AND password=?"); 
             ps.setString(1, userName);
             ps.setString(2, password);
             ResultSet rs = ps.executeQuery();
@@ -420,7 +421,7 @@ public class Account{
         return payment;
     }
 
-//    public boolean isloggedin() {
+//    public boolean isgedin() {
 //        return session != null;
 //    }
 }

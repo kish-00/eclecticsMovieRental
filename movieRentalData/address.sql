@@ -1,0 +1,10 @@
+insert into address (address_id, address, address2, district, last_update, phone, postal_code, city_city_id) values (1, 1, 1, '9', '2021-06-13 00:35:55', '340-968-0639', '506 01', 1);
+insert into address (address_id, address, address2, district, last_update, phone, postal_code, city_city_id) values (2, 2, 2, '6730', '2021-07-28 13:06:50', '163-650-7430', '345535', 2);
+insert into address (address_id, address, address2, district, last_update, phone, postal_code, city_city_id) values (3, 3, 3, '46', '2021-10-16 17:23:20', '979-771-9375', '141960', 3);
+insert into address (address_id, address, address2, district, last_update, phone, postal_code, city_city_id) values (4, 4, 4, '04704', '2022-03-11 12:13:30', '980-141-1900', '745645', 4);
+insert into address (address_id, address, address2, district, last_update, phone, postal_code, city_city_id) values (5, 5, 5, '7', '2022-03-17 12:15:29', '439-115-1796', '58823-000', 5);
+insert into address (address_id, address, address2, district, last_update, phone, postal_code, city_city_id) values (6, 6, 6, '92283', '2021-05-09 01:47:05', '452-282-4562', '2345124', 6);
+insert into address (address_id, address, address2, district, last_update, phone, postal_code, city_city_id) values (7, 7, 7, '0289', '2021-04-19 13:23:53', '796-479-3710', '623412', 7);
+insert into address (address_id, address, address2, district, last_update, phone, postal_code, city_city_id) values (8, 8, 8, '06', '2021-03-25 11:31:07', '210-276-2879', '35470', 8);
+insert into address (address_id, address, address2, district, last_update, phone, postal_code, city_city_id) values (9, 9, 9, '801', '2021-11-10 22:46:59', '292-771-8757', '35234', 9);
+insert into address (address_id, address, address2, district, last_update, phone, postal_code, city_city_id) values (10, 10, 10, '2395', '2022-02-01 11:54:09', '487-301-2023', '06182 CEDEX 2', 10);

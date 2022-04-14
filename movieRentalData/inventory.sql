@@ -1,0 +1,10 @@
+insert into inventory (Id, last_updated, film_inventory_film_id) values (1, '2021-08-22 04:46:51', 1);
+insert into inventory (Id, last_updated, film_inventory_film_id) values (2, '2021-08-08 00:33:09', 2);
+insert into inventory (Id, last_updated, film_inventory_film_id) values (3, '2022-03-11 04:40:40', 3);
+insert into inventory (Id, last_updated, film_inventory_film_id) values (4, '2021-05-17 08:19:34', 4);
+insert into inventory (Id, last_updated, film_inventory_film_id) values (5, '2022-03-21 06:00:57', 5);
+insert into inventory (Id, last_updated, film_inventory_film_id) values (6, '2021-12-29 10:25:19', 6);
+insert into inventory (Id, last_updated, film_inventory_film_id) values (7, '2021-08-09 20:11:21', 7);
+insert into inventory (Id, last_updated, film_inventory_film_id) values (8, '2022-01-17 19:43:23', 8);
+insert into inventory (Id, last_updated, film_inventory_film_id) values (9, '2021-06-30 23:33:31', 9);
+insert into inventory (Id, last_updated, film_inventory_film_id) values (10, '2021-05-02 02:47:54', 10);

@@ -1,0 +1,10 @@
+insert into language (id, last_update, name) values (1, '2021-09-20 04:28:11', 'Tetum');
+insert into language (id, last_update, name) values (2, '2021-12-07 22:54:26', 'Estonian');
+insert into language (id, last_update, name) values (3, '2022-01-09 05:47:53', 'Estonian');
+insert into language (id, last_update, name) values (4, '2021-11-25 17:25:02', 'Montenegrin');
+insert into language (id, last_update, name) values (5, '2021-12-31 16:36:59', 'Chinese');
+insert into language (id, last_update, name) values (6, '2021-10-24 22:38:55', 'Guaraní');
+insert into language (id, last_update, name) values (7, '2021-10-04 17:38:09', 'Kyrgyz');
+insert into language (id, last_update, name) values (8, '2022-01-21 14:38:21', 'Kyrgyz');
+insert into language (id, last_update, name) values (9, '2021-06-16 08:10:22', 'Estonian');
+insert into language (id, last_update, name) values (10, '2022-03-15 12:13:20', 'Nepali');

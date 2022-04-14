@@ -82,11 +82,11 @@ public class MainApp {
             case 6:
                 Film filmRental = account.viewFilmDetails();
                 System.out.println("The film to be rented is: "+filmRental.getTitle());
-                System.out.println("The total amount is: "+filmRental.FilmPayment());
+                System.out.println("The total amount is: "+filmRental.FilmPayment()+"$ ");
                 break;
             default:
                 System.out.println("Transaction has ended");
-                System.out.println("Thank you for using Visual Movie Rental System");
+                System.out.println("Thank you for using EC Movie Rental System");
                 System.exit(0);
                 break;
         }

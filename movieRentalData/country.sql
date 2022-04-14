@@ -1,0 +1,10 @@
+insert into country (country_id, country, last_update, name) values (1, 'China', '2021-06-01 00:29:30', 'Sanyi');
+insert into country (country_id, country, last_update, name) values (2, 'Argentina', '2022-03-09 19:50:31', 'Coté-Lai');
+insert into country (country_id, country, last_update, name) values (3, 'Uruguay', '2021-11-15 04:28:30', 'Mercedes');
+insert into country (country_id, country, last_update, name) values (4, 'Guatemala', '2021-11-20 23:51:18', 'Pasaco');
+insert into country (country_id, country, last_update, name) values (5, 'Denmark', '2021-06-29 09:34:53', 'København');
+insert into country (country_id, country, last_update, name) values (6, 'Netherlands', '2021-05-25 00:08:26', 'Maastricht');
+insert into country (country_id, country, last_update, name) values (7, 'China', '2022-01-28 00:42:15', 'Suining');
+insert into country (country_id, country, last_update, name) values (8, 'Lithuania', '2021-03-30 13:19:47', 'Utena');
+insert into country (country_id, country, last_update, name) values (9, 'Venezuela', '2021-06-24 14:30:47', 'San Fernando Apure');
+insert into country (country_id, country, last_update, name) values (10, 'Mongolia', '2022-02-16 17:26:02', 'Tsalgar');

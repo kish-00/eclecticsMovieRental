@@ -1,0 +1,10 @@
+insert into payment (Id, payment_date, amount, customer_customer_id, rental_id, staff_id) values (1, '2021-11-20 18:26:44', 85.79, 1, 1, 1);
+insert into payment (Id, payment_date, amount, customer_customer_id, rental_id, staff_id) values (2, '2021-08-30 00:49:53', 50.08, 2, 2, 2);
+insert into payment (Id, payment_date, amount, customer_customer_id, rental_id, staff_id) values (3, '2021-12-09 13:38:17', 90.8, 3, 3, 3);
+insert into payment (Id, payment_date, amount, customer_customer_id, rental_id, staff_id) values (4, '2021-10-06 20:09:08', 23.53, 4, 4, 4);
+insert into payment (Id, payment_date, amount, customer_customer_id, rental_id, staff_id) values (5, '2021-11-22 21:06:43', 42.6, 5, 5, 5);
+insert into payment (Id, payment_date, amount, customer_customer_id, rental_id, staff_id) values (6, '2021-07-07 00:36:14', 8.78, 6, 6, 6);
+insert into payment (Id, payment_date, amount, customer_customer_id, rental_id, staff_id) values (7, '2021-05-12 02:40:32', 56.47, 7, 7, 7);
+insert into payment (Id, payment_date, amount, customer_customer_id, rental_id, staff_id) values (8, '2022-02-01 18:56:18', 27.92, 8, 8, 8);
+insert into payment (Id, payment_date, amount, customer_customer_id, rental_id, staff_id) values (9, '2022-03-15 22:51:51', 96.52, 9, 9, 9);
+insert into payment (Id, payment_date, amount, customer_customer_id, rental_id, staff_id) values (10, '2021-10-11 16:20:22', 71.05, 10, 10, 10);

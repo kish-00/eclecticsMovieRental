@@ -1,0 +1,10 @@
+insert into actor (actor_id, first_name, last_name, last_update) values (1, 'Kirstyn', 'McRoberts', '2021-08-30 21:32:18');
+insert into actor (actor_id, first_name, last_name, last_update) values (2, 'Tanner', 'Croxon', '2021-08-18 20:02:57');
+insert into actor (actor_id, first_name, last_name, last_update) values (3, 'Kally', 'Boulstridge', '2021-06-18 23:52:28');
+insert into actor (actor_id, first_name, last_name, last_update) values (4, 'Mortimer', 'Silverman', '2021-08-06 23:48:32');
+insert into actor (actor_id, first_name, last_name, last_update) values (5, 'Curtis', 'Tann', '2021-04-24 11:45:33');
+insert into actor (actor_id, first_name, last_name, last_update) values (6, 'Margarita', 'Biggin', '2021-06-13 10:29:38');
+insert into actor (actor_id, first_name, last_name, last_update) values (7, 'Euell', 'McKerlie', '2022-03-29 23:31:25');
+insert into actor (actor_id, first_name, last_name, last_update) values (8, 'Dasie', 'Peto', '2022-02-01 11:27:30');
+insert into actor (actor_id, first_name, last_name, last_update) values (9, 'Edgard', 'Manthorpe', '2021-10-29 04:29:53');
+insert into actor (actor_id, first_name, last_name, last_update) values (10, 'Grier', 'Esmond', '2022-02-02 18:03:32');

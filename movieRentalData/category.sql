@@ -1,0 +1,10 @@
+insert into category (category_id, last_update, name_of_category) values (1, '2021-12-18 04:28:42', 'Comedy|Fantasy|Horror');
+insert into category (category_id, last_update, name_of_category) values (2, '2021-03-23 13:23:22', 'Comedy');
+insert into category (category_id, last_update, name_of_category) values (3, '2021-06-24 08:01:40', 'Action|Drama|Sci-Fi');
+insert into category (category_id, last_update, name_of_category) values (4, '2021-10-08 06:52:15', 'Horror');
+insert into category (category_id, last_update, name_of_category) values (5, '2021-10-14 21:58:50', 'Adventure|Fantasy');
+insert into category (category_id, last_update, name_of_category) values (6, '2021-10-26 14:14:16', 'Action|Adventure|Fantasy');
+insert into category (category_id, last_update, name_of_category) values (7, '2021-11-27 17:41:46', 'Action|Sci-Fi');
+insert into category (category_id, last_update, name_of_category) values (8, '2021-06-17 17:49:02', 'Children|Comedy');
+insert into category (category_id, last_update, name_of_category) values (9, '2021-10-28 19:30:33', 'Adventure|Children|Fantasy|Musical');
+insert into category (category_id, last_update, name_of_category) values (10, '2021-09-20 13:29:23', 'Documentary');
